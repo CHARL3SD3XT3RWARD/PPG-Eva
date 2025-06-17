@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>PPG_EVA module &#8212; PPG_Eva_docs  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=61cd365c" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-PPG_EVA">
+<span id="ppg-eva-module"></span><h1>PPG_EVA module<a class="headerlink" href="#module-PPG_EVA" title="Link to this heading">¶</a></h1>
+<p>Created on Thu Jan 16 14:37:23 2025</p>
+<p>&#64;author: alko18</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="PPG_EVA.JoinSignals">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">JoinSignals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal_A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal_B</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps_A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps_B</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.JoinSignals" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="simple">
+<dt>The class for every action where both signals are needed. Includes:</dt><dd><p>__init__
+synchronizing
+cut</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.JoinSignals.cut">
+<span class="sig-name descname"><span class="pre">cut</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal_length_A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal_length_B</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.JoinSignals.cut" title="Link to this definition">¶</a></dt>
+<dd><p>Cuts both signals to the same length.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>length_A<span class="classifier">Int, optional</span></dt><dd><p>Desired length of the reference signal. The default is 138240 (18 min).</p>
+</dd>
+<dt>length_B<span class="classifier">Int, optional</span></dt><dd><p>Desired length of the second signal. The default is 34560 (18 min).</p>
+</dd>
+</dl>
+<p>None.</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.JoinSignals.syncronizing">
+<span class="sig-name descname"><span class="pre">syncronizing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.JoinSignals.syncronizing" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>flag</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, indicates that no equal timestamps were found. Thus adding 12 hours to the reference timestamps
+anr reiterating in a recursive mannor. The default is 0.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>self.sync</strong> – The tupel with synchrinized indizes of somno, corsano and the true fs of corsano respectively.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tupel</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.NOR">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">NOR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.NOR" title="Link to this definition">¶</a></dt>
+<dd><p>!!! Deprecated!!!
+A simple NOR gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>bool</em>)</p></li>
+<li><p><strong>b</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="PPG_EVA.Processing">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">Processing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamps</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.Processing" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="simple">
+<dt>The class for processing the Signals. Included are:</dt><dd><p>__init__
+pleth_filter
+struckt (DEPRECATED)
+resampling
+slice_list</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.Processing.pleth_filter">
+<span class="sig-name descname"><span class="pre">pleth_filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowcut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highcut</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resampled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.Processing.pleth_filter" title="Link to this definition">¶</a></dt>
+<dd><p>Butterwoth IIR filter second order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fs</strong> (<em>Int</em>) – Sampling rate in Hertz. The default is 128 Hz.</p></li>
+<li><p><strong>lowcut</strong> (<em>float</em><em>, </em><em>optional</em>) – The default is 0.5.</p></li>
+<li><p><strong>highcut</strong> (<em>float</em><em>, </em><em>optional</em>) – The default is 8.</p></li>
+<li><p><strong>order</strong> (<em>Int</em><em>, </em><em>optional</em>) – The default is a Bandpass of 2nd order.</p></li>
+<li><p><strong>resampled</strong> (<em>Bool</em><em>, </em><em>optional</em>) – Wether the Signal is resampled. the resampled signal is a different attribute of this object.
+The default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.Processing.resampling">
+<span class="sig-name descname"><span class="pre">resampling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sampling_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolate_pchip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.Processing.resampling" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sampling_rate</strong> (<em>Int</em><em>, </em><em>optional</em>) – The original smaplingrate of the signal. The default is 32.</p></li>
+<li><p><strong>target_rate</strong> (<em>Int</em>) – The target samplinrate of the signal, The dafault is 128.</p></li>
+<li><p><strong>interpolate_pchip</strong> (<em>bool</em>) – if True, the resampling is performed by the pchip-method.
+The default is False and hence C2-Splineinterpolation is used.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.Processing.slice_list">
+<span class="sig-name descname"><span class="pre">slice_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chunk_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.Processing.slice_list" title="Link to this definition">¶</a></dt>
+<dd><p>Sequencing of the signal into desired length.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>chunk_size</strong> (<em>Int</em><em>, </em><em>optional</em>) – The desired length of sequence.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.Processing.struckt">
+<span class="sig-name descname"><span class="pre">struckt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Samplerate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.03125</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.Processing.struckt" title="Link to this definition">¶</a></dt>
+<dd><p>!!!Deprecated!!!
+Creates new timestamps for a resampled signal.
+Deprecated since new timestamps are created within the resampling-method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Samplerate</strong> (<em>float</em><em>, </em><em>optional</em>) – The NEW samplerate.
+The default is 1/128.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.ROC">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">ROC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">refdata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresholds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.ROC" title="Link to this definition">¶</a></dt>
+<dd><p>!!!Deprecated!!!
+An attempt to build a ROC-Funktion. Does not work well.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>array</em>) – The calculated SQIs.</p></li>
+<li><p><strong>refdata</strong> (<em>array</em>) – <dl class="simple">
+<dt>The annotationarray.</dt><dd><p>1 = True  = good
+0 = False = bad</p>
+</dd>
+</dl>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>TPR</strong> (<em>list</em>) – The True Positive Rate (Sensitivity)</p></li>
+<li><p><strong>PPV</strong> (<em>list</em>) – The precision.</p></li>
+<li><p><strong>FPR</strong> (<em>list</em>) – The False Positive Rate (Specificity)</p></li>
+<li><p><strong>thresh</strong> (<em>list</em>) – The used thresholds.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.ROC_mid">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">ROC_mid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.ROC_mid" title="Link to this definition">¶</a></dt>
+<dd><p>!!!Deprecated!!!
+Calculates a mean ROC for every SQI.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> (<em>list</em><em> of </em><em>lists</em>) – A list of ROC-data for a specific SQI</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of the mean Sensitivity (Index 0), mean specificity (index 1)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="PPG_EVA.SQI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">SQI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal_chunks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criterion_snr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criterion_entropy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criterion_zcr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.SQI" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="simple">
+<dt>The class to calculate all SQIs. Includes:</dt><dd><p>__init__
+shanon_entropy
+calc_SNR
+ZCR
+skewness
+kurt
+decision (DEPRECATED)
+final_decision (DEPRECATED)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.SQI.ZCR">
+<span class="sig-name descname"><span class="pre">ZCR</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.SQI.ZCR" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the ZCR for every sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul>
+<li><p><strong>self.signs</strong> (<em>list</em>) –</p>
+<dl class="simple">
+<dt>A list with values for  the signs of the signalvalues.</dt><dd><p>1 = positive</p>
+</dd>
+</dl>
+<p>-1 = negative</p>
+</li>
+<li><p><strong>self.cross_pos</strong> (<em>list</em>) – A list if the indices where a zero crossing occured.</p></li>
+<li><p><strong>self.n_cross</strong> (<em>Int</em>) – The number of zero crossings.</p></li>
+<li><p><strong>self.slope</strong> (<em>float</em>) – the slope of the lin. regression for every sequence.</p></li>
+<li><p><strong>self.intersect</strong> (<em>float</em>) – the the y-intersect of the lin. regression for every sequence.</p></li>
+<li><p><em>self.variance</em> – the variance for every sequence.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.SQI.calc_SNR">
+<span class="sig-name descname"><span class="pre">calc_SNR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lowcut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">highcut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.SQI.calc_SNR" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the Signal- to Noise-Ratio.
+Defined as the relative power of a signalband to the rest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lowcut</strong> (<em>float</em><em>, </em><em>optional</em>) – Lower bound of the frequency band. The default is .8 (48 bpm).</p></li>
+<li><p><strong>highcut</strong> (<em>float</em><em>, </em><em>optional</em>) – higher bound of the frequency band. The default is 2.0 (120 bpm).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>self.SNR</strong> (<em>list</em>) – The SNR-values for every sequence.</p></li>
+<li><p><strong>self.freq</strong> (<em>list</em>) – the frequencies for every sequence.</p></li>
+<li><p><strong>self.magnitude</strong> (<em>list</em>) – the magnitudes of the frequencies for every sequence.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.SQI.decision">
+<span class="sig-name descname"><span class="pre">decision</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.SQI.decision" title="Link to this definition">¶</a></dt>
+<dd><p>!!!Deprecated!!!
+Decides wether the values are good or bad.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><strong>self.decision_snr</strong> (<em>list</em>) – List of bool. True for good value and Flase for bad value.</p></li>
+<li><p><strong>self.decision_entropy</strong> (<em>list</em>) – List of bool. True for good value and Flase for bad value.</p></li>
+<li><p><strong>self.decision_zcr</strong> (<em>list</em>) – List of bool. True for good value and Flase for bad value.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.SQI.final_decision">
+<span class="sig-name descname"><span class="pre">final_decision</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.SQI.final_decision" title="Link to this definition">¶</a></dt>
+<dd><p>!!!Deprecated!!!
+A digital logic to combine all SQIs to one. Was used for SNR, Entropy and ZCR.
+Since these parameters dont apply its not used anymore.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p><strong>wrapper</strong> –</p>
+<dl class="simple">
+<dt>A dictionary with the final decision. It contains:</dt><dd><p>min. Annehmbar: the length of chains of succesive sequences that are at least ‘annehmbar’
+Gut: the length of chains of succesive sequences that are at least ‘good’
+längste min. Annehmbar in Prozent: the longes chain of at least ‘annehmbar’ in percent of the total amount of sequences
+längste Gut in Prozent: the longes chain of at least ‘good’ in percent of the total amount of sequences,
+Qualitäten: the raw qualities for every sequence</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.SQI.kurt">
+<span class="sig-name descname"><span class="pre">kurt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.SQI.kurt" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the kurtosis for every sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>self.kurt</strong> – The kurtosis for every sequence.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.SQI.shanon_entropy">
+<span class="sig-name descname"><span class="pre">shanon_entropy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.SQI.shanon_entropy" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the entropy for every sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_bins</strong> (<em>Int</em><em>, </em><em>optional</em>) – The number of bins used. The default is 16.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>self.entropy_values</strong> – the entropy values for every sequence.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.SQI.skewness">
+<span class="sig-name descname"><span class="pre">skewness</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.SQI.skewness" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the skewness for every sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>self.skewness</strong> – The skewness for every sequence.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="PPG_EVA.Training">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">Training</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skew_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kurt_values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.Training" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="simple">
+<dt>The class for Training. Includes:</dt><dd><p>__init__
+separate_values
+building hists</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.Training.building_hists">
+<span class="sig-name descname"><span class="pre">building_hists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.Training.building_hists" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plot</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, all histogrammst will be plotted. The default is False.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>self.hist</strong> (<em>aray</em>) – The histogrammvalues.</p></li>
+<li><p><strong>self.xedges</strong> (<em>array</em>) – The xedges if the bins.</p></li>
+<li><p><strong>self.yedges</strong> (<em>array</em>) – The yedges if the bins.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PPG_EVA.Training.separate_values">
+<span class="sig-name descname"><span class="pre">separate_values</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.Training.separate_values" title="Link to this definition">¶</a></dt>
+<dd><p>Separating the values in good and bad data according to the annotation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.XOR">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">XOR</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.XOR" title="Link to this definition">¶</a></dt>
+<dd><p>A simple XOR gate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>bool</em>)</p></li>
+<li><p><strong>b</strong> (<em>bool</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.classify_data">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">classify_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xedges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yedges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.classify_data" title="Link to this definition">¶</a></dt>
+<dd><p>Classify the input data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hist</strong> (<em>array</em>) – The histogramvalues.</p></li>
+<li><p><strong>data1</strong> (<em>array</em>) – The skewness values of a signal.</p></li>
+<li><p><strong>data2</strong> (<em>array</em>) – The kurtosis values of a signal.</p></li>
+<li><p><strong>xedges</strong> (<em>array</em>) – The xedges of the bins.</p></li>
+<li><p><strong>yedges</strong> (<em>array</em>) – The yedges of the bins.</p></li>
+<li><p><strong>annotation</strong> (<em>array</em><em>, </em><em>optional</em>) – The annotation. It is only used to plot the data into the histogramm. The default is None.</p></li>
+<li><p><strong>plot</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the histogram will be plotted with the annotated data. The default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>scores</strong> – The likelihood of a value being good.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.decide">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">decide</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criterion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zcr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.decide" title="Link to this definition">¶</a></dt>
+<dd><p>!!!Deprecated!!!
+Decides weather a value is good or bad.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>array</em>) – The values of every signalchunk.</p></li>
+<li><p><strong>criterion</strong> (<em>float</em>) – The decision criterion.</p></li>
+<li><p><strong>zcr</strong> (<em>bool</em><em>, </em><em>optional</em>) – Since the ZCR should be minimimal for a good value, the decision is inversed. The default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>decision</strong> – A list of bools. A one (1) for good and a zero (0) for bad.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.import_decisionpoints">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">import_decisionpoints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.import_decisionpoints" title="Link to this definition">¶</a></dt>
+<dd><p>!!!Deprecated!!!</p>
+<p>Was created to import decision thresholds.
+Since the classifier is exported with its best threshold this function is obsolete.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.import_training_data">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">import_training_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">training_values_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.import_training_data" title="Link to this definition">¶</a></dt>
+<dd><p>Imports a excel-sheet with all data of Somno.
+Futhermore, a rondomization and subdivison into test- and trainingsets is performed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>training_values_path</strong> (<em>string</em>) – The specific path of the excel-sheet.</p></li>
+<li><p><strong>Example</strong> (<em>A:my      rainingdata    raining_data.xlsx</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>validation_sets</strong> (<em>dict</em>) – Five subsets with a raugh equal amount of good and bad data.</p></li>
+<li><p><strong>training_sets</strong> (<em>dict</em>) – Five subsets wich contain four validation_sets. In every training_set one validation_set is missing.</p></li>
+<li><p><strong>test_set</strong> (<em>array</em>) – One set wich contains 20% of the whole dataset with respect to the subdivision in good and bad data.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.lin_reg">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">lin_reg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">signal_chunks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.lin_reg" title="Link to this definition">¶</a></dt>
+<dd><p>A funktion wicht performs a lin. regression for every given signalchunk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>signal_chunks</strong> (<em>array</em>) – The sequenced signal.</p></li>
+<li><p><strong>cross_pos</strong> (<em>2D-list</em>) – The Position of each zero crossing for every signal_chunks</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>slope</strong> (<em>list</em>) – The slope of every lin. regression.</p></li>
+<li><p><strong>intersect</strong> (<em>list</em>) – The y-intercept for every lin. regression.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.mean_hists">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">mean_hists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hists</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thresholds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.mean_hists" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the mean from all histograms as final classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hists</strong> (<em>dict</em>) – All five histogramms fromm the trainingsets.</p></li>
+<li><p><strong>thresholds</strong> (<em>dict</em>) – best threshold from every subset.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>mean_hist</strong> (<em>array</em>) – The mean histogram.</p></li>
+<li><p><strong>xedges</strong> (<em>array</em>) – The xedges of the bins.</p></li>
+<li><p><strong>yedges</strong> (<em>array</em>) – The yedges of the bins.</p></li>
+<li><p><strong>mean_thresh</strong> (<em>float</em>) – the mean threshold from the best thresholds.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.minimize">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">minimize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.minimize" title="Link to this definition">¶</a></dt>
+<dd><p>!!!Deprecated!!!
+Find the value with the minimal distance to the koordinates [0,1]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>values</strong> (<em>list</em>) – a list of lists with sensitivity at index 0, specificity at index 1 and coresponding thresholds at index 2.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>TYPE</strong> – The index with the minimal distance to [0,1] and its corresponding threshold</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.preprocessing">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">preprocessing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">training_signal_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">chunk_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.preprocessing" title="Link to this definition">¶</a></dt>
+<dd><p>A preprocessing returns the SQI as objects for each device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>training_signal_path</strong> (<em>string</em>) – The baspath to signaldirectory.</p></li>
+<li><p><strong>TN</strong> (<em>string</em>) – The TN-ID to find the signals within the training_signal_path.</p></li>
+<li><p><strong>chunk_length</strong> (<em>float</em><em>, </em><em>optional</em>) – <p>The chunklength as a Faktor of one minute. The default is 1.
+Example:</p>
+<blockquote>
+<div><p>chunk_length = 1/6 = 60s/6 = 10s
+chunk_length = 1.5 = 1.5*60 = 90s -&gt; 1.5 minutes</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Weather PPG-Eva is in training mode or not. If False, corsano will only used for synchronicing.
+Was used for the aqusition of the training_data. The default is True.</p></li>
+<li><p><strong>plot</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the whole signal will be plotted. The default is True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.process">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TN_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.process" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TN_list</strong> (<em>list</em>) – A list of the names.</p></li>
+<li><p><strong>train</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, PPG-Eva is in training mode. Otherwise it is in Evaluation mode. The default is False.</p></li>
+<li><p><strong>plot</strong> (<em>bool</em><em>, </em><em>optional</em>) – Deprecated. The default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul>
+<li><p><em>in Train-mode</em> –</p>
+<dl class="simple">
+<dt>Nothing. The results of the classifier are shown. The operator is prompted to enter:</dt><dd><p>y : classifier will be saved and PPG-Eva terminates.
+n : training will be performed again with a new randomization of the sets.
+q : Quit. PPG.Eva terminates.</p>
+</dd>
+</dl>
+</li>
+<li><p><em>in Evaluation-mode</em> –</p>
+<dl class="simple">
+<dt>final_results_somno: dict</dt><dd><p>A dictionairy where the names are the keys. Behind every key is a dictionairy containing the results from
+wrapping_results()
+‘good’: number og good sequences
+‘bad’ : number of bad sequences
+‘sum’ : nuber of sequences</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.read_signal">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">read_signal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mod_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">signal_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">','</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skiprows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'infer'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.read_signal" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mod_path</strong> (<em>string</em>) – The modified filepath to the signalfile wit its name as last part.
+Syntax: path + ‘filename’</p></li>
+<li><p><strong>signal_key</strong> (<em>string</em>) – <dl class="simple">
+<dt>The keyword/number for Pandas.Dataframe signal-column.</dt><dd><p>Somno:   signal_key= 2
+corsano: signal_key=’value’</p>
+</dd>
+</dl>
+</p></li>
+<li><p><strong>time_key</strong> (<em>string</em>) – <p>Das Schlüsselwort für den Pandas.DataFrame um auf die Zeitstempel zuzugreifen.
+The keyword/number for Pandas.Dataframe timestamp-column
+no:   time_key=0</p>
+<blockquote>
+<div><p>corsano: time_key=’date’</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>sep</strong> (<em>string</em><em>, </em><em>optional</em>) – The seperator used to seperate the columns. Only necessary for Somno. Corsanofiles use the default.
+The default is ‘,’.
+sep_somno = ‘;’</p></li>
+<li><p><strong>skiprows</strong> (<em>integer</em><em>, </em><em>optional</em>) – !!!Deprecated!!!
+The number of rows that should be skipped. Only necessary for Somno (skip 6 rows).
+The default is 0.</p></li>
+<li><p><strong>date_format</strong> (<em>string</em><em>, </em><em>optional</em>) – Date-format for the timestamps.
+Only necessary for Somno (“%d.%m.%Y %H:%M:%S,%f”)
+The default is None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>signals</strong> (<em>array</em>) – The signal as a timeseries.</p></li>
+<li><p><strong>timestamps</strong> (<em>Series</em>) – the timestamps as pandas.Series.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.test_subsets">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">test_subsets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">validation_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean_hist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xedges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yedges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">best_thresh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.test_subsets" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>validation_sets</strong> (<em>dict</em>) – A dictionaity containing the data of the subsets -&gt; import_training_data().</p></li>
+<li><p><strong>mean_hist</strong> (<em>array</em>) – The classifying histogram.</p></li>
+<li><p><strong>xedges</strong> (<em>array</em>) – The xedges of the bins.</p></li>
+<li><p><strong>yedges</strong> (<em>array</em>) – The yedges of the bins.</p></li>
+<li><p><strong>best_thresh</strong> (<em>float</em>) – The mean threshold.</p></li>
+<li><p><strong>plot</strong> (<em>TYPE</em><em>, </em><em>optional</em>) – If True, the performance of the calssifier on the subsets will be plotted in ROC-Space.
+The default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the
+mean fpr
+mean tpr
+standard deviation of fpr
+standard deviation of tpr
+on the respective indices.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.test_testset">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">test_testset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_set</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mean_hist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xedges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yedges</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">best_thresh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_tupel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.test_testset" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>test_set</strong> (<em>ndarray</em>) – A dictionaity containing the data of the testset -&gt; import_training_data().</p></li>
+<li><p><strong>mean_hist</strong> (<em>array</em>) – The classifying histogram.</p></li>
+<li><p><strong>xedges</strong> (<em>array</em>) – The xedges of the bins.</p></li>
+<li><p><strong>yedges</strong> (<em>array</em>) – The yedges of the bins.</p></li>
+<li><p><strong>best_thresh</strong> (<em>float</em>) – The mean threshold.</p></li>
+<li><p><strong>val_tupel</strong> (<em>tuple</em>) – <dl class="simple">
+<dt>A tuple containing the</dt><dd><p>mean fpr
+mean tpr
+standard deviation of fpr
+standard deviation of tpr</p>
+</dd>
+</dl>
+<p>on the respective indices.</p>
+</p></li>
+<li><p><strong>plot</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the performance ofe the classifier on the testset will be plottet in the ROC-space
+with the data of the subsets as errorbars. The default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>test_fpr</strong> (<em>float</em>) – The fpr of the classifier on the testset.</p></li>
+<li><p><strong>test_tpr</strong> (<em>float</em>) – The tpr of the classifier on the testset.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.train_hist">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">train_hist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">validation_sets</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hists</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.train_hist" title="Link to this definition">¶</a></dt>
+<dd><p>This funktion iterates over the subsets. Here the thresholds for every subset are determined with the use of ROC.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>validation_sets</strong> (<em>dict</em>) – A dictionaity containing the data of the subsets -&gt; import_training_data().</p></li>
+<li><p><strong>hists</strong> (<em>dict</em>) – A dictionairy containing the histograms of every trainingset.</p></li>
+<li><p><strong>plot</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, all five ROC-Curves are plotted. The default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>master_thresholds</strong> – A dictionairy containing the beste threshold for every subset.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.variance">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">variance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slopes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intersect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_pos</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.variance" title="Link to this definition">¶</a></dt>
+<dd><p>A function wich calculates the variance of the data relative to the lin. regression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slopes</strong> (<em>list</em>) – The slopes for every lin. regression.</p></li>
+<li><p><strong>intersect</strong> (<em>list</em>) – The y-intersect for ever lin. regression.</p></li>
+<li><p><strong>cross_pos</strong> (<em>list</em>) – The position of every zero crossing as an array for every signalchunk.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>var</strong> – The normalised variance of the data relative to the lin. regression</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="PPG_EVA.wrapping_results">
+<span class="sig-prename descclassname"><span class="pre">PPG_EVA.</span></span><span class="sig-name descname"><span class="pre">wrapping_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prediction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PPG_EVA.wrapping_results" title="Link to this definition">¶</a></dt>
+<dd><p>Counting the good and bad labeled sequences.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prediction</strong> (<em>array</em>) – The array with the prdicted labels.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the number of good labels, bad labels and overall number of labels.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">PPG_Eva_docs</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Alexander Kornrumpf.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.3.7</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/PPG_EVA.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
